@@ -627,11 +627,11 @@
               <input id="fullName" name="fullName" type="text" placeholder="Wayne White">
             </div>
             <div class="field">
-              <label for="phone">Your phone number (or email below)</label>
+              <label for="phone">Your phone number</label>
               <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
             </div>
             <div class="field">
-              <label for="email">Your email address (or phone above)</label>
+              <label for="email">Your email address</label>
               <input id="email" name="email" type="email" placeholder="you@email.com">
             </div>
             <div class="field">
@@ -834,7 +834,7 @@
   // Quote form submit — sends data to a Google Apps Script Web App, which saves it to
   // a Google Sheet and emails you a notification. See setup instructions provided separately.
   // Replace GOOGLE_SCRIPT_URL below with your own deployed Web App URL.
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby92wFJrvHzmhec7CCkESntuO1TjP-8cdMVcqfaqhvY4esyD98vRatcP6S19e5YeA/exec";
+  const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
   const quoteForm = document.getElementById('quoteForm');
   const formSuccess = document.getElementById('formSuccess');
@@ -842,13 +842,6 @@
 
   quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const phoneVal = document.getElementById('phone').value.trim();
-    const emailVal = document.getElementById('email').value.trim();
-    if (!phoneVal && !emailVal) {
-      alert('Please provide at least a phone number or an email address so we can reach you.');
-      return;
-    }
 
     if (GOOGLE_SCRIPT_URL.includes('PASTE_YOUR')) {
       alert('Form backend not connected yet — see setup instructions to add your Google Apps Script URL.');
