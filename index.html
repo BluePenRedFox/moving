@@ -632,7 +632,7 @@
             </div>
             <div class="field">
               <label for="email">Your email address</label>
-              <input id="email" name="email" type="email" placeholder="you@email.com">
+              <input id="email" name="email" type="text" placeholder="you@email.com">
             </div>
             <div class="field">
               <label for="movers">Preferred number of movers</label>
@@ -856,6 +856,7 @@
 
     fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
+      mode: 'no-cors',
       body: formData
     })
       .then(() => {
