@@ -843,7 +843,7 @@
   quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (GOOGLE_SCRIPT_URL.includes('https://script.google.com/macros/s/AKfycby08OhUgX_ez8P3I91Nc-TyvoseWb0_zmypalHTsQfBqpR6EDSXo8U3eBVP-QnAUOc/exec')) {
+    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('PASTE_YOUR') || !GOOGLE_SCRIPT_URL.startsWith('https://script.google.com/macros/')) {
       alert('Form backend not connected yet — see setup instructions to add your Google Apps Script URL.');
       return;
     }
